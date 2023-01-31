@@ -1,10 +1,10 @@
 const uniqueValidNumber = (N, inputArray) => {
   let index = Array(256).fill(-1), result = 0;
   inputArray.map((number, idx) => {
-    if (index[number] == -1) { index[number] = idx+1; result++; }
+    if (index[number] == -1) { index[number] = idx + 1; result++; }
     else if (index[number] != -2) {
       if ((idx + 1) % index[number] != 0) { index[number] = -2; result--; }
-      else index[number] = idx+1;
+      else index[number] = idx + 1;
     }
   });
   console.log(result);
